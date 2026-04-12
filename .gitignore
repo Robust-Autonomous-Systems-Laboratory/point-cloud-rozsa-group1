@@ -1,0 +1,12 @@
+# Large intermediate files — do not commit these
+*.mcap
+*.simplemap
+*.mm
+*.ply
+*.las
+trajectory.tum
+
+# Potree output — add your pointclouds/ directory explicitly when ready to publish:
+#   git add pointclouds/ index.html
+#   git commit -m "Add my point cloud"
+pointclouds/
