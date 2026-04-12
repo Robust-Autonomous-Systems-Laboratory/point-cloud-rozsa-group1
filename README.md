@@ -170,17 +170,18 @@ mm-info your_bag.mcap.mm
 
 The output will look like:
 ```
-"map": ... bounding box: [-104.9 -92.8 -6.0]-[114.7 123.8 27.6]
+"map": ... bounding box: [X_min Y_min Z_min]-[X_max Y_max Z_max]
 ```
-This tells you the map spans about 220 m × 217 m × 34 m — far too large to fit under 10 MB.
+Note the extents — your map may cover a large area with many millions of points.
+Exporting everything unfiltered would produce a file far too large for the web.
 You will need to crop it down to a region of interest.
 
 ---
 
 ## Step 3 — Choose and Set Your Crop Region
 
-Point cloud maps get large fast. A typical 20-minute outdoor LiDAR run produces 5–10 million
-points. Exporting everything would be tens of megabytes; streaming it on the web would be slow.
+Point cloud maps get large fast — a typical outdoor LiDAR run accumulates millions of points.
+Exporting everything would be tens of megabytes; streaming it on the web would be slow.
 
 The solution is to **crop** — keep only the region you care about. This is done by
 `mm-filter`, which applies a spatial bounding box to each layer in the `.mm` file.
