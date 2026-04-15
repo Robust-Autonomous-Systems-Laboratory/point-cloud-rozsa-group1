@@ -5,7 +5,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<title>Potree Viewer</title>
+	<title>Rozsa SLAM Map</title>
 
 	<link rel="stylesheet" type="text/css" href="./resources/page_template/libs/potree/potree.css">
 	<link rel="stylesheet" type="text/css" href="./resources/page_template/libs/jquery-ui/jquery-ui.min.css">
@@ -55,11 +55,11 @@
 
 		viewer.setEDLEnabled(false);
 		viewer.setFOV(60);
-		viewer.setPointBudget(1_000_000);
+		viewer.setPointBudget(1_500_000);
 		viewer.loadSettingsFromURL();
 		viewer.setBackground("skybox");
 
-		viewer.setDescription("Rozsa Center for the Performing Arts - EE5531 MOLA SLAM [Group 1]");
+		viewer.setDescription("Rozsa Center for the Performing Arts - EE5531 MOLA SLAM Group 1");
 
 		viewer.loadGUI(() => {
 			viewer.setLanguage('en');
@@ -79,7 +79,7 @@
 			material.shape = Potree.PointShape.SPLAT;
 
 			material.activeAttributeName = "elevation";
-			material.elevationRange = [-10, 20];
+			material.elevationRange = [-3, 10];
 			material.gradient = Potree.Gradients.RAINBOW;
 			viewer.setEDLEnabled(true);
 			viewer.setFOV(90);
